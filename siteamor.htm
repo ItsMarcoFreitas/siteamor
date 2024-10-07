@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart</title>
+    <link
+      rel="canonical"
+      href="https://icons.getbootstrap.com/icons/heart-fill/"
+    />
+    <style>
+      .content {
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      body {
+        background-color: rgba(245, 240, 237, 0);
+        color: white;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #heart {
+        position: relative;
+        width: 100px;
+        height: 90px;
+        transform: scale(3);
+        transition: all 0.3s;
+        z-index: 10;
+        cursor: pointer;
+      }
+
+      #heart:before,
+      #heart:after {
+        position: absolute;
+        content: "";
+        left: 50px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        background: red;
+        border-radius: 50px 50px 0 0;
+        transform: rotate(-45deg);
+        transform-origin: 0 100%;
+      }
+
+      #heart:after {
+        left: 0;
+        transform: rotate(45deg);
+        transform-origin: 100% 100%;
+      }
+
+      #container {
+        position: relative;
+        z-index: 10;
+        transition: all 0.3s;
+      }
+
+      #container2 {
+        position: absolute;
+        z-index: 0;
+      }
+
+      .containerMoved {
+        transform: rotate(-90deg) translate(200px, 200px);
+      }
+
+      img {
+        display: none;
+        margin-top: 20px;
+        max-width: 300px;
+        border-radius: 10px;
+        transition: all 0.3s;
+      }
+
+      .show-img img {
+        display: block;
+      }
+
+      .hide {
+        display: none;
+      }
+
+      p {
+        text-align: center;
+        font-weight: 700;
+        position: absolute;
+        color: rgb(220, 20, 60);
+        transform: translateY(-30px);
+      }
+
+      h1 {
+        text-align: center;
+        color: rgb(220, 20, 60);
+      }
+
+      .cantada {
+        width: 99%;
+        color: rgb(220, 20, 60);
+        padding: 0;
+        margin: 0;
+      }
+
+      span {
+        color: rgb(220, 20, 60);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Clica no corção, meu amor</h1>
+    <div class="content">
+      <div id="container">
+        <div id="heart"></div>
+      </div>
+      <div id="container2">
+        <div id="heart2"></div>
+      </div>
+      <!-- Imagem escondida -->
+      <div id="imageContainer">
+        <img src="ZEL_0736.jpg" alt="Minha Foto" id="minhaFoto" />
+      </div>
+    </div>
+
+    <p class="cantada">
+      Meu docinho, você é indescritível!
+      <br />
+      <span
+        >Não há palavras suficientes para lhe descrever corretamente...</span
+      >
+      <br />
+      Muito mais que incrível, a cada dia redefinindo a palavra perfeição!
+      <br />
+      <span>Um sorriso lindo, que sempre aquece e derrete meu coração,</span>
+      <br />
+      Em tão pouco tempo já nos tornamos algo que é inexplicável,
+      <br />
+      Você é a minha motivação pra acordar todos os dias e me tornar um homem
+      melhor,
+      <br />
+      <span>Eu te amo tanto, mais do que você possa imaginar.</span>
+    </p>
+
+    <script>
+      const container = document.getElementById("container");
+      const heart = document.getElementById("heart");
+      const imageContainer = document.getElementById("imageContainer");
+
+      container.addEventListener("click", () => {
+        container.classList.toggle("containerMoved");
+        imageContainer.classList.toggle("show-img");
+        heart.classList.add("hide");
+      });
+    </script>
+  </body>
+</html>
